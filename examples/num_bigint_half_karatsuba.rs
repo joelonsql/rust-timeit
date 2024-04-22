@@ -19,8 +19,8 @@ fn main() {
     println!("b_exp,c_exp,time_b,time_c,executions");
 
     for _ in 0..3 { // Repeat the measurement three times
-        for b_exp in 1..=17 {
-            for c_exp in 1..=17 {
+        for b_exp in 1..=24 {
+            for c_exp in 1..=24 {
                 let b: BigUint = RandBigInt::gen_biguint(&mut rng, 1 << b_exp);
                 let c: BigUint = RandBigInt::gen_biguint(&mut rng, 1 << c_exp);
 
