@@ -1,11 +1,12 @@
-# rust-timeit
+# rust-timeit 🚧
 
-`rust-timeit` is designed to facilitate precise time measurements and comparisons between different implementations of the same functionality.
+`rust-timeit` is designed to facilitate precise time measurements and comparisons between different implementations of the same functionality. **Please note this is an unreleased work-in-progress project, and breaking changes may occur at any time.** ⚠️
 
 ## Features
 
-- **Measure Time**: Functionality to measure the execution time of a Rust function over a specified number of executions.
-- **Compare Functions**: Ability to compare the execution time of two different functions to determine which is faster under similar conditions.
+- **Measure Time** ⏱️: Functionality to measure the execution time of a Rust function over a specified number of executions.
+
+- **Compare Functions** 🔍: Ability to compare the execution time of two different functions to determine which is faster under similar conditions.
 
 ## Installation
 
