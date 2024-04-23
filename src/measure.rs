@@ -1,4 +1,5 @@
 use std::time::Instant;
+use std::hint::black_box;
 
 /// Measures the execution time of a function over a specified number of executions.
 /// 
@@ -14,7 +15,7 @@ where
 {
     let start = Instant::now();
     for _ in 0..executions {
-        func();
+        black_box(func());
     }
     let duration = start.elapsed();
     duration.as_micros()  // Return the execution time in microseconds
