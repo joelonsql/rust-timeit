@@ -12,3 +12,4 @@ num-bigint-dev = { path = "num-bigint-dev", features = ["rand"], package = "num-
 num-traits = "0.2"
 rand = "0.8"
 rand_core = "0.6"
+minstant = "0.1"

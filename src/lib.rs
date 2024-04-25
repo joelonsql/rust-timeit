@@ -1,4 +1,5 @@
-use std::time::{Duration, Instant};
+use std::time::Duration;
+use minstant::Instant;
 
 mod measure;
 

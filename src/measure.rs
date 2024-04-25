@@ -1,4 +1,4 @@
-use std::time::Instant;
+use minstant::Instant;
 use std::hint::black_box;
 
 /// Measures the execution time of a function over a specified number of executions.
