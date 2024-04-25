@@ -7,8 +7,8 @@ edition = "2021"
 
 [dependencies]
 chrono = "0.4"
-num-bigint-org = { path = "/Users/joel/num-bigint-original", features = ["rand"], package = "num-bigint" }
-num-bigint-dev = { path = "/Users/joel/src/num-bigint", features = ["rand"], package = "num-bigint" }
+num-bigint-org = { path = "num-bigint-org", features = ["rand"], package = "num-bigint" }
+num-bigint-dev = { path = "num-bigint-dev", features = ["rand"], package = "num-bigint" }
 num-traits = "0.2"
 rand = "0.8"
 rand_core = "0.6"
