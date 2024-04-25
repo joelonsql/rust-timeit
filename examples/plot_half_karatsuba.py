@@ -6,11 +6,11 @@ import numpy as np
 # Load the data
 df = pd.read_csv('half_karatsuba.csv')
 
-# Group by 'b_big_digits' and 'c_big_digits' and calculate the performance ratio
-grouped = df.groupby(['b_big_digits', 'c_big_digits']).apply(
+# Group by 'b_exp' and 'c_exp' and calculate the performance ratio
+grouped = df.groupby(['b_exp', 'c_exp']).apply(
     lambda x: x['time_b'].sum() / x['time_c'].sum()
 ).reset_index()
-grouped.columns = ['b_big_digits', 'c_big_digits', 'performance_ratio']
+grouped.columns = ['b_exp', 'c_exp', 'performance_ratio']
 
 # Filter for performance ratios less than 1.0
 filtered_grouped = grouped[grouped['performance_ratio'] < 1.0]
@@ -26,16 +26,16 @@ print(top_5)
 
 # Plotting
 fig, ax = plt.subplots()
-scatter = ax.scatter(grouped['b_big_digits'], grouped['c_big_digits'], c=grouped['performance_ratio'], cmap='rainbow', s=3, marker='s')
+scatter = ax.scatter(grouped['b_exp'], grouped['c_exp'], c=grouped['performance_ratio'], cmap='rainbow', s=240, marker='s')
 
 # Colorbar
 cbar = plt.colorbar(scatter)
 cbar.set_label('Performance Ratio')
 
 # Labeling
-ax.set_xlabel('b_big_digits')
-ax.set_ylabel('c_big_digits')
-ax.set_title('Performance Ratio by b_exp and c_big_digits')
+ax.set_xlabel('b_exp')
+ax.set_ylabel('c_exp')
+ax.set_title('Performance Ratio by b_exp and c_exp')
 
 # Show plot
 plt.show()

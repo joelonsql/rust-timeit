@@ -1,20 +1,34 @@
 # rust-timeit 🚧
 
-`rust-timeit` is designed to facilitate precise time measurements and comparisons between different implementations of the same functionality. **Please note this is an unreleased work-in-progress project, and breaking changes may occur at any time.** ⚠️
-
-## Features
-
-- **Measure Time** ⏱️: Functionality to measure the execution time of a Rust function over a specified number of executions.
-
-- **Compare Functions** 🔍: Ability to compare the execution time of two different functions to determine which is faster under similar conditions.
+`rust-timeit` is designed to compare the execution time of two different implementations of the same function to determine which is faster under similar conditions. **Please note this is an unreleased work-in-progress project, and breaking changes may occur at any time.** ⚠️
 
 ## Installation
 
-Add `rust-timeit` to your `Cargo.toml` dependencies:
+To install `rust-timeit`, you need to include it in your Rust project's `Cargo.toml` file. Additionally, before building the project, you must execute a pre-build script to set up necessary dependencies.
+
+1. Add to `Cargo.toml`:
+
+Add `rust-timeit` to your dependencies in `Cargo.toml`:
 
 ```toml
 [dependencies]
 rust-timeit = "0.1.0"
+```
+
+2. Run Pre-Build Script:
+
+Execute the `pre-build.sh` script to prepare the project environment:
+
+```sh
+./pre-build.sh
+```
+
+3. Build the Project:
+
+Use Cargo to build your project:
+
+```sh
+cargo build
 ```
 
 ## Usage
@@ -73,6 +87,22 @@ fn main() {
     println!("Function A time: {}μs, Function B time: {}μs, Executions: {}", time_a, time_b, final_executions);
 }
 ```
+
+## Real-Life Examples
+
+### Benchmarking Optimizations in `num-bigint`
+
+`rust-timeit` was initially developed to evaluate an optimisation in the [https://github.com/rust-num/num-bigint](https://github.com/rust-num/num-bigint) project.
+
+To replicate the evaluation and visualize the performance gains:
+
+```sh
+cd examples
+cargo run --release --example num_bigint_half_karatsuba > half_karatsuba.csv
+./plot_half_karatsuba.py
+```
+
+![Half Karatsuba patch benchmark plot](examples/half_karatsuba.png?raw=true)
 
 ## License
 
